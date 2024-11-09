@@ -17,7 +17,7 @@ function showAlert() {
 function openNewTabsOnClose() {
     window.onbeforeunload = function() {
         for (let i = 0; i < 2; i++) {
-            window.open('https://kabusikigaisyaidea.github.io/burakura8313/');
+            window.open('https://burakura8313.pages.dev/');
         }
     };
 }
