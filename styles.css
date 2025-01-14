@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+    font-family: 'Cinzel', serif; /* ミステリアスなフォントに変更 */
+    background-color: #1a1a1a; /* 背景を暗く */
+    color: #e0e0ff;
+    text-align: center;
+    margin-top: 50px;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* 背景に星のようなテクスチャを追加 */
+    animation: fadeIn 2s ease-in-out;
+    padding: 0 10px;
+}
+
+h1, p {
+    color: #e0e0ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* テキストに影を追加 */
+    animation: fadeIn 2s ease-in-out;
+}
+
+button {
+    padding: 20px 40px; /* ボタンサイズを大きく */
+    font-size: 20px; /* ボタンのフォントサイズを大きく */
+    margin-top: 20px;
+    background-color: #4b0082; /* 紫を基調に */
+    color: #e0e0ff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: buttonPulse 2s infinite;
+}
+
+button:hover {
+    background-color: #6a0dad; /* ホバーカラーも紫の濃淡 */
+    transform: scale(1.05);
+}
+
+.result {
+    font-size: 24px; /* 結果表示のフォントサイズ */
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes sparkle {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(100vh) scale(1.5); } /* 上から下に落ちるアニメーション */
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* メディアクエリ */
+@media (max-width: 600px) {
+    body {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .result {
+        font-size: 20px;
+    }
+}
+
+/* キラキラアニメーションを追加 */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #e0e0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #e0e0ff, 0 0 20px #e0e0ff, 0 0 30px #e0e0ff;
+    animation: sparkle 2s infinite;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    animation: starTwinkle 1s infinite;
+}
